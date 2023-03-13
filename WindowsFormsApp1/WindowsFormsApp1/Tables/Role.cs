@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Tables
 {
-    public class UserRole
+    public class Role
     {
-        public int UserRoleId { get; set; }
-        public string Role { get; set; }
+        public int RoleId { get; set; }
+        public string Name { get; set; }
         
     }
 }

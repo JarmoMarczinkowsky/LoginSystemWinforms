@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Tables
     internal class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -25,17 +25,17 @@ namespace WindowsFormsApp1.Tables
             base.OnModelCreating(modelBuilder);
             //seeder
 
-            modelBuilder.Entity<UserRole>().HasData(
-                new UserRole { UserRoleId = 1, Role = "User" },
-                new UserRole { UserRoleId = 2, Role = "Admin" },
-                new UserRole { UserRoleId = 3, Role = "Contentbeheerder" }
+            modelBuilder.Entity<Role>().HasData(
+                new Role { RoleId = 1, Name = "User" },
+                new Role { RoleId = 2, Name = "Admin" },
+                new Role { RoleId = 3, Name = "Contentbeheerder" }
                 );
 
             modelBuilder.Entity<User>().HasData(
-                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = "pieter123", UserRoleId = 1 },
-                new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = "albert123", UserRoleId = 1 },
-                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@posalbt.nl", Password = "johan123", UserRoleId = 3 },
-                new User { UserId = 4, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = "admin123", UserRoleId = 2 });
+                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = "pieter123", RoleId = 1 },
+                new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = "albert123", RoleId = 1 },
+                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@posalbt.nl", Password = "johan123", RoleId = 3 },
+                new User { UserId = 4, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = "admin123", RoleId = 2 });
         }
     }
 }

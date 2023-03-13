@@ -31,18 +31,19 @@
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbUser = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txbPassword
             // 
-            this.txbPassword.Location = new System.Drawing.Point(155, 315);
+            this.txbPassword.Location = new System.Drawing.Point(155, 316);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(262, 22);
             this.txbPassword.TabIndex = 0;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(155, 365);
+            this.btnLogin.Location = new System.Drawing.Point(155, 353);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(133, 42);
             this.btnLogin.TabIndex = 1;
@@ -57,11 +58,21 @@
             this.txbUser.Size = new System.Drawing.Size(262, 22);
             this.txbUser.TabIndex = 2;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(152, 412);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(36, 16);
+            this.lblError.TabIndex = 3;
+            this.lblError.Text = "Error";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 450);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.txbUser);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txbPassword);
@@ -79,6 +90,7 @@
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txbUser;
+        private System.Windows.Forms.Label lblError;
     }
 }
 
