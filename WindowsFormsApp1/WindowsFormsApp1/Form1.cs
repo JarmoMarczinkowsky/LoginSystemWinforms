@@ -44,6 +44,7 @@ namespace WindowsFormsApp1
             var getPass = dbContext.Users.Where(u => txbUser.Text == u.Email).FirstOrDefault();
             var decryptGetPass = BCrypt.Net.BCrypt.Verify(txbPassword.Text, getPass.Password);
 
+
             var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && decryptGetPass).FirstOrDefault();
             if (checkLogin != null)
             {
