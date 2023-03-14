@@ -39,24 +39,24 @@
             this.txbPassword.Location = new System.Drawing.Point(155, 316);
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(262, 22);
-            this.txbPassword.TabIndex = 0;
+            this.txbPassword.TabIndex = 1;
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(155, 353);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(133, 42);
-            this.btnLogin.TabIndex = 1;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // txbUser
             // 
-            this.txbUser.Location = new System.Drawing.Point(155, 262);
+            this.txbUser.Location = new System.Drawing.Point(155, 288);
             this.txbUser.Name = "txbUser";
             this.txbUser.Size = new System.Drawing.Size(262, 22);
-            this.txbUser.TabIndex = 2;
+            this.txbUser.TabIndex = 0;
             // 
             // lblError
             // 

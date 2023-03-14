@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WindowsFormsApp1.Tables
 {
     internal class AppDbContext : DbContext
@@ -31,11 +32,19 @@ namespace WindowsFormsApp1.Tables
                 new Role { RoleId = 3, Name = "Contentbeheerder" }
                 );
 
+
             modelBuilder.Entity<User>().HasData(
-                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = "pieter123", RoleId = 1 },
+                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = HashPassword("pieter123"), RoleId = 1 },
                 new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = "albert123", RoleId = 1 },
                 new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@posalbt.nl", Password = "johan123", RoleId = 3 },
                 new User { UserId = 4, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = "admin123", RoleId = 2 });
+        }
+
+        //create method that gets a string and returns a hashed string
+
+        public string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
         }
     }
 }

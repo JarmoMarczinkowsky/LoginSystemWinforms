@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
             lblError.Text = "";
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,15 +40,29 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && txbPassword.Text == u.Password).FirstOrDefault();
+            //decrypt password from database
+            var getPass = dbContext.Users.Where(u => txbUser.Text == u.Email).FirstOrDefault();
+            var decryptGetPass = BCrypt.Net.BCrypt.Verify(txbPassword.Text, getPass.Password);
+
+            var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && decryptGetPass).FirstOrDefault();
             if (checkLogin != null)
             {
                 lblError.Text = "Login gelukt";
+
+                //go to IndexForm and close current form
+
+                IndexForm indexForm = new IndexForm();
+                indexForm.Show();
+                this.Hide();
             }
             else
             {
                 lblError.Text = "Login gefaald";
             }
+
+
+
+
         }
     }
 }
