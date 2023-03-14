@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
             
             this.dbContext = new AppDbContext();
 
-            dbContext.Users.Load();
+            dbContext.Users.Include(u => u.Role).Load();
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
 
         }

@@ -36,9 +36,9 @@ namespace WindowsFormsApp1.Tables
             modelBuilder.Entity<User>().HasData(
                 new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = HashPassword("pieter123"), RoleId = 1 },
                 new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = HashPassword("albert123"), RoleId = 1 },
-                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@post.nl", Password = "johan123", RoleId = 3 },
+                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@post.nl", Password = HashPassword("johan123"), RoleId = 3 },
                 new User { UserId = 4, Name = "adminName", Email = "admin", Password = HashPassword("admin123"), RoleId = 3 },
-                new User { UserId = 5, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = "admin123", RoleId = 2 });
+                new User { UserId = 5, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = HashPassword("admin123"), RoleId = 2 });
         }
 
         //create method that gets a string and returns a hashed string

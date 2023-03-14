@@ -52,9 +52,10 @@ namespace WindowsFormsApp1
 
                 //go to IndexForm and close current form
 
-                IndexForm indexForm = new IndexForm();
-                indexForm.Show();
                 this.Hide();
+                IndexForm indexForm = new IndexForm();
+                indexForm.ShowDialog();
+                this.Close();
             }
             else
             {

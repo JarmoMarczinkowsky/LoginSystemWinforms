@@ -86,8 +86,8 @@
             // 
             // roleDataGridViewTextBoxColumn
             // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "RoleId";
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
             this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.Width = 125;
