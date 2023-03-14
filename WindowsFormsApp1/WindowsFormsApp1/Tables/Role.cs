@@ -12,6 +12,11 @@ namespace WindowsFormsApp1.Tables
     {
         public int RoleId { get; set; }
         public string Name { get; set; }
-        
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
     }
 }

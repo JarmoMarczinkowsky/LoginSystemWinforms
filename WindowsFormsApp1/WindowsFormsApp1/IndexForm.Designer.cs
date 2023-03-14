@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,29 +44,30 @@
             this.dgvUsers.AutoGenerateColumns = false;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.Id,
             this.nameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
             this.dgvUsers.DataSource = this.userBindingSource;
-            this.dgvUsers.Location = new System.Drawing.Point(49, 46);
+            this.dgvUsers.Location = new System.Drawing.Point(74, 72);
+            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(629, 150);
+            this.dgvUsers.Size = new System.Drawing.Size(944, 234);
             this.dgvUsers.TabIndex = 0;
             // 
             // userBindingSource
             // 
             this.userBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.User);
             // 
-            // Column1
+            // Id
             // 
-            this.Column1.DataPropertyName = "UserId";
-            this.Column1.HeaderText = "Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 50;
+            this.Id.DataPropertyName = "UserId";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 50;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -94,10 +95,11 @@
             // 
             // IndexForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
             this.Controls.Add(this.dgvUsers);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "IndexForm";
             this.Text = "IndexForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
@@ -110,7 +112,7 @@
 
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
