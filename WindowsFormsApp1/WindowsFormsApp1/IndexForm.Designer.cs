@@ -86,8 +86,8 @@
             // 
             // roleDataGridViewTextBoxColumn
             // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "RoleId";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "RoleId";
             this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.Width = 125;
@@ -109,10 +109,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvUsers;
+        private System.Windows.Forms.BindingSource userBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource userBindingSource;
     }
 }
