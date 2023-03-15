@@ -66,8 +66,8 @@ namespace WindowsFormsApp1
                 //go to IndexForm and close current form
 
                 this.Hide();
-                IndexForm indexForm = new IndexForm();
-                indexForm.ShowDialog();
+                DashboardForm dashboardForm = new DashboardForm();
+                dashboardForm.ShowDialog();
                 this.Close();
             }
             else
