@@ -12,6 +12,8 @@ namespace WindowsFormsApp1.Tables
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<UserGroup> UserGroups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -39,6 +41,10 @@ namespace WindowsFormsApp1.Tables
                 new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@post.nl", Password = HashPassword("johan123"), RoleId = 3 },
                 new User { UserId = 4, Name = "adminName", Email = "admin", Password = HashPassword("admin123"), RoleId = 3 },
                 new User { UserId = 5, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = HashPassword("admin123"), RoleId = 2 });
+
+            modelBuilder.Entity<Group>().HasData(
+                new Group { GroupId = 1, Name = "TTB4-SSD3B", Size = 18 },
+                new Group { GroupId = 2, Name = "H4A", Size = 20 });
         }
 
         //create method that gets a string and returns a hashed string
