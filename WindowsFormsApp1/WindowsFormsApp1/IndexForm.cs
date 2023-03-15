@@ -45,6 +45,29 @@ namespace WindowsFormsApp1
             }
 
             lblSelectName.Text = selectRow.Role.Name;
+            txbChangeName.Text = selectRow.Name;
+        }
+
+        private void btnChangeName_Click(object sender, EventArgs e)
+        {
+            var getName = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
+            getName.Name = txbChangeName.Text;
+
+            this.dbContext.SaveChanges();
+            dgvUsers.Refresh();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            //open form1 and close this form
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+            this.Close();
+
+            //clear variable myaccoutname
+            Form1.myAccountName = "";
+
         }
     }
 }

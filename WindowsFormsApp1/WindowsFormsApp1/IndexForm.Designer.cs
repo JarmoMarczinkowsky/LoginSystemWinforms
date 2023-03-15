@@ -32,11 +32,14 @@
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblSelectName = new System.Windows.Forms.Label();
+            this.lblAccountName = new System.Windows.Forms.Label();
+            this.txbChangeName = new System.Windows.Forms.TextBox();
+            this.btnChangeName = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblAccountName = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,11 +73,37 @@
             // lblSelectName
             // 
             this.lblSelectName.AutoSize = true;
-            this.lblSelectName.Location = new System.Drawing.Point(194, 299);
+            this.lblSelectName.Location = new System.Drawing.Point(194, 312);
             this.lblSelectName.Name = "lblSelectName";
             this.lblSelectName.Size = new System.Drawing.Size(44, 16);
             this.lblSelectName.TabIndex = 1;
             this.lblSelectName.Text = "label1";
+            // 
+            // lblAccountName
+            // 
+            this.lblAccountName.AutoSize = true;
+            this.lblAccountName.Location = new System.Drawing.Point(541, 9);
+            this.lblAccountName.Name = "lblAccountName";
+            this.lblAccountName.Size = new System.Drawing.Size(44, 16);
+            this.lblAccountName.TabIndex = 2;
+            this.lblAccountName.Text = "label1";
+            // 
+            // txbChangeName
+            // 
+            this.txbChangeName.Location = new System.Drawing.Point(197, 331);
+            this.txbChangeName.Name = "txbChangeName";
+            this.txbChangeName.Size = new System.Drawing.Size(190, 22);
+            this.txbChangeName.TabIndex = 3;
+            // 
+            // btnChangeName
+            // 
+            this.btnChangeName.Location = new System.Drawing.Point(197, 359);
+            this.btnChangeName.Name = "btnChangeName";
+            this.btnChangeName.Size = new System.Drawing.Size(190, 35);
+            this.btnChangeName.TabIndex = 4;
+            this.btnChangeName.Text = "button1";
+            this.btnChangeName.UseVisualStyleBackColor = true;
+            this.btnChangeName.Click += new System.EventHandler(this.btnChangeName_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -104,20 +133,24 @@
             // 
             this.userBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.User);
             // 
-            // lblAccountName
+            // btnLogout
             // 
-            this.lblAccountName.AutoSize = true;
-            this.lblAccountName.Location = new System.Drawing.Point(633, 13);
-            this.lblAccountName.Name = "lblAccountName";
-            this.lblAccountName.Size = new System.Drawing.Size(44, 16);
-            this.lblAccountName.TabIndex = 2;
-            this.lblAccountName.Text = "label1";
+            this.btnLogout.Location = new System.Drawing.Point(713, 9);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 41);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnChangeName);
+            this.Controls.Add(this.txbChangeName);
             this.Controls.Add(this.lblAccountName);
             this.Controls.Add(this.lblSelectName);
             this.Controls.Add(this.dgvUsers);
@@ -140,5 +173,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblSelectName;
         private System.Windows.Forms.Label lblAccountName;
+        private System.Windows.Forms.TextBox txbChangeName;
+        private System.Windows.Forms.Button btnChangeName;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

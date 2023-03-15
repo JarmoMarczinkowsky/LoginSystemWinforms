@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             this.dbContext = new AppDbContext();
 
-            this.dbContext.Database.EnsureDeleted();
+            //this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             var loadUsers = dbContext.Users;
