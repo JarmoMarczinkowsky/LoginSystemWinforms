@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             txbChangeName.Text = selectRow.Name;
         }
 
-        private void btnChangeName_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
             var getName = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
             getName.Name = txbChangeName.Text;
@@ -68,6 +68,27 @@ namespace WindowsFormsApp1
             //clear variable myaccoutname
             Form1.myAccountName = "";
 
+        }
+
+        private void bntRemove_Click(object sender, EventArgs e)
+        {
+            var getName = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
+            this.dbContext.Users.Remove(getName);
+           
+            this.dbContext.SaveChanges();
+            dgvUsers.Refresh();
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            //insert into database and refresh datagridview 
+            var insertUser = new User()
+            {
+                Name = txbChangeName.Text,
+                Email = txbInsertEmail.Text,
+                Password = BCrypt.Net.BCrypt.HashPassword(txbInsertPassword.Text),
+                RoleId = 1
+            };
         }
     }
 }
