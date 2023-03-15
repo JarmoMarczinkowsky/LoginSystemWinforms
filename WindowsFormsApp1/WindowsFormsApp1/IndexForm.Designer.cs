@@ -42,10 +42,11 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.bntRemove = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbEmail = new System.Windows.Forms.TextBox();
+            this.txbRole = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +125,7 @@
             // 
             // txbChangeName
             // 
-            this.txbChangeName.Location = new System.Drawing.Point(395, 218);
+            this.txbChangeName.Location = new System.Drawing.Point(358, 218);
             this.txbChangeName.Name = "txbChangeName";
             this.txbChangeName.Size = new System.Drawing.Size(190, 22);
             this.txbChangeName.TabIndex = 3;
@@ -169,19 +170,19 @@
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // textBox1
+            // txbEmail
             // 
-            this.textBox1.Location = new System.Drawing.Point(395, 246);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 22);
-            this.textBox1.TabIndex = 8;
+            this.txbEmail.Location = new System.Drawing.Point(358, 246);
+            this.txbEmail.Name = "txbEmail";
+            this.txbEmail.Size = new System.Drawing.Size(190, 22);
+            this.txbEmail.TabIndex = 8;
             // 
-            // textBox2
+            // txbRole
             // 
-            this.textBox2.Location = new System.Drawing.Point(395, 274);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 22);
-            this.textBox2.TabIndex = 9;
+            this.txbRole.Location = new System.Drawing.Point(358, 274);
+            this.txbRole.Name = "txbRole";
+            this.txbRole.Size = new System.Drawing.Size(190, 22);
+            this.txbRole.TabIndex = 9;
             // 
             // label1
             // 
@@ -201,15 +202,25 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Email";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(311, 277);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Role";
+            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbRole);
+            this.Controls.Add(this.txbEmail);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.bntRemove);
             this.Controls.Add(this.btnLogout);
@@ -242,9 +253,10 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button bntRemove;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbEmail;
+        private System.Windows.Forms.TextBox txbRole;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

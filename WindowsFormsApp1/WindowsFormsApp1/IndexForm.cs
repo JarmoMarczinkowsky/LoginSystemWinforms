@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Tables;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp1
 {
@@ -50,8 +51,12 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            var getName = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
-            getName.Name = txbChangeName.Text;
+            var getData = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
+
+            //update getData
+            getData.Name = txbChangeName.Text;
+            getData.Email = txbEmail.Text;
+            getData.RoleId = Convert.ToInt32(txbRole.Text);
 
             this.dbContext.SaveChanges();
             dgvUsers.Refresh();
@@ -85,10 +90,15 @@ namespace WindowsFormsApp1
             var insertUser = new User()
             {
                 Name = txbChangeName.Text,
-                Email = txbInsertEmail.Text,
-                Password = BCrypt.Net.BCrypt.HashPassword(txbInsertPassword.Text),
-                RoleId = 1
+                Email = txbEmail.Text,
+                Password = BCrypt.Net.BCrypt.HashPassword("test"),
+                RoleId = 2
             };
+
+            this.dbContext.Users.Add(insertUser);
+            this.dbContext.SaveChanges();
+
+            dgvUsers.Refresh();
         }
     }
 }
