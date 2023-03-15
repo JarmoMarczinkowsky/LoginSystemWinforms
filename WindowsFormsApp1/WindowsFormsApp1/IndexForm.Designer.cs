@@ -30,11 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSelectName = new System.Windows.Forms.Label();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblAccountName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -49,17 +51,13 @@
             this.emailDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
             this.dgvUsers.DataSource = this.userBindingSource;
-            this.dgvUsers.Location = new System.Drawing.Point(74, 72);
-            this.dgvUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvUsers.Location = new System.Drawing.Point(49, 46);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(944, 234);
+            this.dgvUsers.Size = new System.Drawing.Size(629, 150);
             this.dgvUsers.TabIndex = 0;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.User);
+            this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
             // Id
             // 
@@ -68,6 +66,15 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Width = 50;
+            // 
+            // lblSelectName
+            // 
+            this.lblSelectName.AutoSize = true;
+            this.lblSelectName.Location = new System.Drawing.Point(194, 299);
+            this.lblSelectName.Name = "lblSelectName";
+            this.lblSelectName.Size = new System.Drawing.Size(44, 16);
+            this.lblSelectName.TabIndex = 1;
+            this.lblSelectName.Text = "label1";
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -93,18 +100,33 @@
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.Width = 125;
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.User);
+            // 
+            // lblAccountName
+            // 
+            this.lblAccountName.AutoSize = true;
+            this.lblAccountName.Location = new System.Drawing.Point(633, 13);
+            this.lblAccountName.Name = "lblAccountName";
+            this.lblAccountName.Size = new System.Drawing.Size(44, 16);
+            this.lblAccountName.TabIndex = 2;
+            this.lblAccountName.Text = "label1";
+            // 
             // IndexForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAccountName);
+            this.Controls.Add(this.lblSelectName);
             this.Controls.Add(this.dgvUsers);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "IndexForm";
             this.Text = "IndexForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -116,5 +138,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblSelectName;
+        private System.Windows.Forms.Label lblAccountName;
     }
 }

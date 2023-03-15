@@ -14,6 +14,16 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         private AppDbContext dbContext;
+
+        private string _accountName;
+        public string MyAccount
+        {
+            get { return _accountName; }
+            set { _accountName = value; }
+        }
+
+        public static string myAccountName = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -49,6 +59,9 @@ namespace WindowsFormsApp1
             if (checkLogin != null)
             {
                 lblError.Text = "Login gelukt";
+
+                MyAccount = txbUser.Text;
+                myAccountName = txbUser.Text;
 
                 //go to IndexForm and close current form
 

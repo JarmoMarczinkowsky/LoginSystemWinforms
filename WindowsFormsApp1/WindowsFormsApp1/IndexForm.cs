@@ -25,6 +25,26 @@ namespace WindowsFormsApp1
             dbContext.Users.Include(u => u.Role).Load();
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
 
+            lblAccountName.Text = Form1.myAccountName;
+
+
+        }
+
+        private void dgvUsers_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dbContext == null)
+            {
+                return;
+            }
+
+            var selectRow = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
+
+            if (selectRow == null)
+            {
+                return;
+            }
+
+            lblSelectName.Text = selectRow.Role.Name;
         }
     }
 }
