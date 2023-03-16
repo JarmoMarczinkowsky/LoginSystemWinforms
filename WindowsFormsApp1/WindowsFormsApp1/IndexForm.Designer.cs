@@ -51,9 +51,12 @@
             this.cboxGroup = new System.Windows.Forms.ComboBox();
             this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
+            this.cboxRole = new System.Windows.Forms.ComboBox();
+            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -113,7 +116,7 @@
             // lblSelectName
             // 
             this.lblSelectName.AutoSize = true;
-            this.lblSelectName.Location = new System.Drawing.Point(549, 328);
+            this.lblSelectName.Location = new System.Drawing.Point(597, 371);
             this.lblSelectName.Name = "lblSelectName";
             this.lblSelectName.Size = new System.Drawing.Size(44, 16);
             this.lblSelectName.TabIndex = 1;
@@ -130,9 +133,9 @@
             // 
             // txbChangeName
             // 
-            this.txbChangeName.Location = new System.Drawing.Point(321, 235);
+            this.txbChangeName.Location = new System.Drawing.Point(298, 235);
             this.txbChangeName.Name = "txbChangeName";
-            this.txbChangeName.Size = new System.Drawing.Size(190, 22);
+            this.txbChangeName.Size = new System.Drawing.Size(243, 22);
             this.txbChangeName.TabIndex = 3;
             // 
             // btnUpdate
@@ -177,14 +180,14 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(321, 263);
+            this.txbEmail.Location = new System.Drawing.Point(298, 263);
             this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(190, 22);
+            this.txbEmail.Size = new System.Drawing.Size(243, 22);
             this.txbEmail.TabIndex = 8;
             // 
             // txbRole
             // 
-            this.txbRole.Location = new System.Drawing.Point(321, 291);
+            this.txbRole.Location = new System.Drawing.Point(374, 399);
             this.txbRole.Name = "txbRole";
             this.txbRole.Size = new System.Drawing.Size(190, 22);
             this.txbRole.TabIndex = 9;
@@ -192,7 +195,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(274, 238);
+            this.label1.Location = new System.Drawing.Point(251, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 10;
@@ -201,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(274, 266);
+            this.label2.Location = new System.Drawing.Point(251, 266);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 11;
@@ -210,7 +213,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(274, 294);
+            this.label3.Location = new System.Drawing.Point(251, 294);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 12;
@@ -232,9 +235,9 @@
             this.cboxGroup.DisplayMember = "Name";
             this.cboxGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxGroup.FormattingEnabled = true;
-            this.cboxGroup.Location = new System.Drawing.Point(321, 320);
+            this.cboxGroup.Location = new System.Drawing.Point(298, 321);
             this.cboxGroup.Name = "cboxGroup";
-            this.cboxGroup.Size = new System.Drawing.Size(190, 24);
+            this.cboxGroup.Size = new System.Drawing.Size(243, 24);
             this.cboxGroup.TabIndex = 14;
             this.cboxGroup.ValueMember = "GroupId";
             // 
@@ -245,17 +248,34 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(274, 323);
+            this.label4.Location = new System.Drawing.Point(251, 324);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 15;
             this.label4.Text = "Group";
+            // 
+            // cboxRole
+            // 
+            this.cboxRole.DataSource = this.roleBindingSource;
+            this.cboxRole.DisplayMember = "Name";
+            this.cboxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxRole.FormattingEnabled = true;
+            this.cboxRole.Location = new System.Drawing.Point(298, 291);
+            this.cboxRole.Name = "cboxRole";
+            this.cboxRole.Size = new System.Drawing.Size(243, 24);
+            this.cboxRole.TabIndex = 16;
+            this.cboxRole.ValueMember = "RoleId";
+            // 
+            // roleBindingSource
+            // 
+            this.roleBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Role);
             // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboxRole);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboxGroup);
             this.Controls.Add(this.btnDashboard);
@@ -277,6 +297,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +327,7 @@
         private System.Windows.Forms.ComboBox cboxGroup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource groupBindingSource;
+        private System.Windows.Forms.ComboBox cboxRole;
+        private System.Windows.Forms.BindingSource roleBindingSource;
     }
 }

@@ -29,8 +29,12 @@ namespace WindowsFormsApp1
                 .Include(g => g.Group)
                 .Load();
 
+            dbContext.Roles.Load();
+            
+
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
+            this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
 
             lblAccountName.Text = Global.AccountName;
 

@@ -194,6 +194,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WindowsFormsApp1.Tables.Group.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Tables.Role.datasource" />
     <None Include="Properties\DataSources\WindowsFormsApp1.Tables.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
