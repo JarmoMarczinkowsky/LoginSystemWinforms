@@ -32,6 +32,7 @@
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -66,6 +67,7 @@
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.nameDataGridViewTextBoxColumn,
+            this.Group,
             this.emailDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
             this.dgvUsers.DataSource = this.userBindingSource;
@@ -73,7 +75,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersWidth = 51;
             this.dgvUsers.RowTemplate.Height = 24;
-            this.dgvUsers.Size = new System.Drawing.Size(629, 150);
+            this.dgvUsers.Size = new System.Drawing.Size(776, 150);
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.SelectionChanged += new System.EventHandler(this.dgvUsers_SelectionChanged);
             // 
@@ -92,6 +94,14 @@
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Group
+            // 
+            this.Group.DataPropertyName = "Group";
+            this.Group.HeaderText = "Group";
+            this.Group.MinimumWidth = 6;
+            this.Group.Name = "Group";
+            this.Group.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -133,7 +143,7 @@
             // 
             // txbChangeName
             // 
-            this.txbChangeName.Location = new System.Drawing.Point(298, 235);
+            this.txbChangeName.Location = new System.Drawing.Point(275, 222);
             this.txbChangeName.Name = "txbChangeName";
             this.txbChangeName.Size = new System.Drawing.Size(243, 22);
             this.txbChangeName.TabIndex = 3;
@@ -180,7 +190,7 @@
             // 
             // txbEmail
             // 
-            this.txbEmail.Location = new System.Drawing.Point(298, 263);
+            this.txbEmail.Location = new System.Drawing.Point(275, 250);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(243, 22);
             this.txbEmail.TabIndex = 8;
@@ -195,7 +205,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(251, 238);
+            this.label1.Location = new System.Drawing.Point(228, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 16);
             this.label1.TabIndex = 10;
@@ -204,7 +214,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 266);
+            this.label2.Location = new System.Drawing.Point(228, 253);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 11;
@@ -213,7 +223,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(251, 294);
+            this.label3.Location = new System.Drawing.Point(228, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 16);
             this.label3.TabIndex = 12;
@@ -235,7 +245,7 @@
             this.cboxGroup.DisplayMember = "Name";
             this.cboxGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxGroup.FormattingEnabled = true;
-            this.cboxGroup.Location = new System.Drawing.Point(298, 321);
+            this.cboxGroup.Location = new System.Drawing.Point(275, 308);
             this.cboxGroup.Name = "cboxGroup";
             this.cboxGroup.Size = new System.Drawing.Size(243, 24);
             this.cboxGroup.TabIndex = 14;
@@ -248,7 +258,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(251, 324);
+            this.label4.Location = new System.Drawing.Point(228, 311);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 16);
             this.label4.TabIndex = 15;
@@ -260,7 +270,7 @@
             this.cboxRole.DisplayMember = "Name";
             this.cboxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboxRole.FormattingEnabled = true;
-            this.cboxRole.Location = new System.Drawing.Point(298, 291);
+            this.cboxRole.Location = new System.Drawing.Point(275, 278);
             this.cboxRole.Name = "cboxRole";
             this.cboxRole.Size = new System.Drawing.Size(243, 24);
             this.cboxRole.TabIndex = 16;
@@ -307,10 +317,6 @@
 
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblSelectName;
         private System.Windows.Forms.Label lblAccountName;
         private System.Windows.Forms.TextBox txbChangeName;
@@ -329,5 +335,10 @@
         private System.Windows.Forms.BindingSource groupBindingSource;
         private System.Windows.Forms.ComboBox cboxRole;
         private System.Windows.Forms.BindingSource roleBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
     }
 }

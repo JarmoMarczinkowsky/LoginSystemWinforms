@@ -12,5 +12,10 @@ namespace WindowsFormsApp1.Tables
         public string Name { get; set; }
         public int Size { get; set; }
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
     }
 }
