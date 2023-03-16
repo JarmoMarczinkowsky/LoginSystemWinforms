@@ -53,10 +53,10 @@ namespace WindowsFormsApp1
         {
             //decrypt password from database
             var getPass = dbContext.Users.Where(u => txbUser.Text == u.Email).FirstOrDefault();
-            var decryptGetPass = BCrypt.Net.BCrypt.Verify(txbPassword.Text, getPass.Password);
+            //var decryptGetPass = BCrypt.Net.BCrypt.Verify(txbPassword.Text, getPass.Password);
 
-
-            var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && decryptGetPass).FirstOrDefault();
+            var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && CheckPassword(txbPassword.Text, getPass.Password)).FirstOrDefault();
+            
             if (checkLogin != null)
             {
                 lblError.Text = "Login gelukt";
@@ -76,9 +76,16 @@ namespace WindowsFormsApp1
                 lblError.Text = "Login gefaald";
             }
 
+        }
 
-
-
+        public bool CheckPassword(string password, string hashedPassword)
+        {
+            using (var sha256 = System.Security.Cryptography.SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                var hash = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+                return hash == hashedPassword;
+            }
         }
     }
 }
