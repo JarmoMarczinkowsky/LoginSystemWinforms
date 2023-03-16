@@ -15,12 +15,12 @@ namespace WindowsFormsApp1
     {
         private AppDbContext dbContext;
 
-        private string _accountName;
-        public string MyAccount
-        {
-            get { return _accountName; }
-            set { _accountName = value; }
-        }
+        //private string _accountName;
+        //public string MyAccount
+        //{
+        //    get { return _accountName; }
+        //    set { _accountName = value; }
+        //}
 
         public static string myAccountName = "";
 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             {
                 lblError.Text = "Login gelukt";
 
-                MyAccount = txbUser.Text;
+                //MyAccount = txbUser.Text;
                 myAccountName = txbUser.Text;
 
                 //go to IndexForm and close current form

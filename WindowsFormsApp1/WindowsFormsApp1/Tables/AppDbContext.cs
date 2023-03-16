@@ -36,16 +36,22 @@ namespace WindowsFormsApp1.Tables
 
 
             modelBuilder.Entity<User>().HasData(
-                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = HashPassword("pieter123"), RoleId = 1 },
-                new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = HashPassword("albert123"), RoleId = 1 },
-                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@post.nl", Password = HashPassword("johan123"), RoleId = 3 },
-                new User { UserId = 4, Name = "adminName", Email = "admin", Password = HashPassword("admin123"), RoleId = 3 },
-                new User { UserId = 5, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = HashPassword("admin123"), RoleId = 2 });
+                new User { UserId = 1, Name = "Pieter Post", Email = "pieter@post.nl", Password = HashPassword("pieter123"), GroupId = 1, RoleId = 1 },
+                new User { UserId = 2, Name = "Albert Einstein", Email = "albert@post.nl", Password = HashPassword("albert123"), GroupId = 2, RoleId = 1 },
+                new User { UserId = 3, Name = "Johannes Vermeer", Email = "johannes@post.nl", Password = HashPassword("johan123"), GroupId = 4, RoleId = 3 },
+                new User { UserId = 4, Name = "adminName", Email = "admin", Password = HashPassword("admin123"), GroupId = 3, RoleId = 3 },
+                new User { UserId = 5, Name = "Jarmo Marczinkowsky", Email = "jarmo@post.nl", Password = HashPassword("admin123"), GroupId = 2, RoleId = 2 });
 
             modelBuilder.Entity<Group>().HasData(
                 new Group { GroupId = 1, Name = "TTB4-SSD3B", Size = 18 },
-                new Group { GroupId = 2, Name = "H4A", Size = 20 });
+                new Group { GroupId = 2, Name = "TTB4_LG_SPEC_NAT_A", Size = 20 },
+                new Group { GroupId = 3, Name = "TT_LG_VHBO", Size = 20 },
+                new Group { GroupId = 4, Name = "TT_LG_PROMI", Size = 20 });
+
+            //create a modelbuilder for usergroup without a primary key
+            modelBuilder.Entity<UserGroup>().HasNoKey();
         }
+
 
         //create method that gets a string and returns a hashed string
 

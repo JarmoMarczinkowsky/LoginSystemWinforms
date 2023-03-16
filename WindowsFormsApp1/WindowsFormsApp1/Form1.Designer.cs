@@ -32,6 +32,7 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbUser = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txbPassword
@@ -67,11 +68,23 @@
             this.lblError.TabIndex = 3;
             this.lblError.Text = "Error";
             // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(200, 163);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(77, 24);
+            this.lblLogin.TabIndex = 4;
+            this.lblLogin.Text = "Inloggen";
+            // 
             // Form1
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 450);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.txbUser);
             this.Controls.Add(this.btnLogin);
@@ -91,6 +104,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.TextBox txbUser;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblLogin;
     }
 }
 
