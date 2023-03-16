@@ -24,8 +24,13 @@ namespace WindowsFormsApp1
             
             this.dbContext = new AppDbContext();
 
-            dbContext.Users.Include(u => u.Role).Load();
+            dbContext.Users
+                .Include(u => u.Role)
+                .Include(g => g.Group)
+                .Load();
+
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
+            this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
 
             lblAccountName.Text = Global.AccountName;
 
@@ -45,6 +50,10 @@ namespace WindowsFormsApp1
             {
                 return;
             }
+
+            //var comboGroup = (Tables.Group)cboxGroup.SelectedItem ;
+            cboxGroup.SelectedValue = selectRow.GroupId;
+
 
             lblSelectName.Text = selectRow.Role.Name;
             txbChangeName.Text = selectRow.Name;
@@ -85,7 +94,8 @@ namespace WindowsFormsApp1
                 Name = txbChangeName.Text,
                 Email = txbEmail.Text,
                 Password = BCrypt.Net.BCrypt.HashPassword("test"),
-                RoleId = 2
+                RoleId = 2,
+                GroupId = 1
             };
 
             this.dbContext.Users.Add(insertUser);
