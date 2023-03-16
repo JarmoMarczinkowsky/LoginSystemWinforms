@@ -13,9 +13,11 @@ namespace WindowsFormsApp1.Classes
 
         public static void Logout(Form currentForm)
         {
+            AccountName = "";
+
             currentForm.Hide();
-            DashboardForm dashboardForm = new DashboardForm();
-            dashboardForm.ShowDialog();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
             currentForm.Close();
         }
     }
