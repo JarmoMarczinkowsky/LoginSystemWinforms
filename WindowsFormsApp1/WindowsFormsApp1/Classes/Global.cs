@@ -20,5 +20,12 @@ namespace WindowsFormsApp1.Classes
             form1.ShowDialog();
             currentForm.Close();
         }
+
+        public static void FormDirect(Form currentForm, Form locationForm)
+        {
+            currentForm.Hide();
+            locationForm.ShowDialog();
+            currentForm.Close();
+        }
     }
 }

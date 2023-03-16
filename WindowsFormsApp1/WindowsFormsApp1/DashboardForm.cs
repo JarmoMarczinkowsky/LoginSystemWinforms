@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
 {
@@ -32,6 +33,11 @@ namespace WindowsFormsApp1
             indexForm.ShowDialog();
             this.Close();
 
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Global.Logout(this);
         }
     }
 }

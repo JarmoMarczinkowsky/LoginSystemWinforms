@@ -65,18 +65,7 @@ namespace WindowsFormsApp1
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            //open form1 and close this form
-            //this.Hide();
-            //Form1 form1 = new Form1();
-            //form1.ShowDialog();
-            //this.Close();
-
-            //clear variable myaccoutname
-            Global.AccountName = "";
-
-
             Global.Logout(this);
-
         }
 
         private void bntRemove_Click(object sender, EventArgs e)
@@ -107,12 +96,7 @@ namespace WindowsFormsApp1
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            //showdialog dashboardform and close this form
-            this.Hide();
-            DashboardForm dashboardForm = new DashboardForm();
-            dashboardForm.ShowDialog();
-            this.Close();
-
+            Global.FormDirect(this, new DashboardForm());
         }
     }
 }
