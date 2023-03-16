@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Classes;
 using WindowsFormsApp1.Tables;
 
 namespace WindowsFormsApp1
@@ -22,7 +23,7 @@ namespace WindowsFormsApp1
         //    set { _accountName = value; }
         //}
 
-        public static string myAccountName = "";
+        //public static string myAccountName = "";
 
         public Form1()
         {
@@ -61,7 +62,7 @@ namespace WindowsFormsApp1
                 lblError.Text = "Login gelukt";
 
                 //MyAccount = txbUser.Text;
-                myAccountName = txbUser.Text;
+                Global.AccountName = txbUser.Text;
 
                 //go to IndexForm and close current form
 

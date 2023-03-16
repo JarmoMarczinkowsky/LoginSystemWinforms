@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Classes;
 using WindowsFormsApp1.Tables;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -26,7 +27,7 @@ namespace WindowsFormsApp1
             dbContext.Users.Include(u => u.Role).Load();
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
 
-            lblAccountName.Text = Form1.myAccountName;
+            lblAccountName.Text = Global.AccountName;
 
 
         }
@@ -65,13 +66,16 @@ namespace WindowsFormsApp1
         private void btnLogout_Click(object sender, EventArgs e)
         {
             //open form1 and close this form
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
-            this.Close();
+            //this.Hide();
+            //Form1 form1 = new Form1();
+            //form1.ShowDialog();
+            //this.Close();
 
             //clear variable myaccoutname
-            Form1.myAccountName = "";
+            Global.AccountName = "";
+
+
+            Global.Logout(this);
 
         }
 
@@ -99,6 +103,16 @@ namespace WindowsFormsApp1
             this.dbContext.SaveChanges();
 
             dgvUsers.Refresh();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            //showdialog dashboardform and close this form
+            this.Hide();
+            DashboardForm dashboardForm = new DashboardForm();
+            dashboardForm.ShowDialog();
+            this.Close();
+
         }
     }
 }

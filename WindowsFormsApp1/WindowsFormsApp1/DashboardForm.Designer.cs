@@ -45,9 +45,9 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(713, 12);
+            this.btnLogout.Location = new System.Drawing.Point(673, 12);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.Size = new System.Drawing.Size(115, 40);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
