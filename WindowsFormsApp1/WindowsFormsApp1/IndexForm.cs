@@ -51,9 +51,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            //var comboGroup = (Tables.Group)cboxGroup.SelectedItem ;
             cboxGroup.SelectedValue = selectRow.GroupId;
-
 
             lblSelectName.Text = selectRow.Role.Name;
             txbChangeName.Text = selectRow.Name;
@@ -67,6 +65,7 @@ namespace WindowsFormsApp1
             getData.Name = txbChangeName.Text;
             getData.Email = txbEmail.Text;
             getData.RoleId = Convert.ToInt32(txbRole.Text);
+            getData.GroupId = Convert.ToInt32(cboxGroup.SelectedValue);
 
             this.dbContext.SaveChanges();
             dgvUsers.Refresh();
