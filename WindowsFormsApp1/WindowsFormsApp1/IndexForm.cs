@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
             dbContext.Users
                 .Include(u => u.Role)
-                .Include(g => g.Group)
+                .Include(g => g.GroupUsers)
                 .Load();
 
             dbContext.Roles.Load();
@@ -57,7 +57,9 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            cboxGroup.SelectedValue = selectRow.GroupId;
+            //int number = selectRow.GroupUsers;
+
+            //cboxGroup.SelectedValue = number;
             cboxRole.SelectedValue = selectRow.RoleId;
 
             lblSelectName.Text = selectRow.Role.Name;
@@ -72,7 +74,7 @@ namespace WindowsFormsApp1
             getData.Name = txbChangeName.Text;
             getData.Email = txbEmail.Text;
             getData.RoleId = Convert.ToInt32(txbRole.Text);
-            getData.GroupId = Convert.ToInt32(cboxGroup.SelectedValue);
+            //getData.GroupId = Convert.ToInt32(cboxGroup.SelectedValue);
 
             this.dbContext.SaveChanges();
             dgvUsers.Refresh();
@@ -101,12 +103,12 @@ namespace WindowsFormsApp1
                 Email = txbEmail.Text,
                 Password = BCrypt.Net.BCrypt.HashPassword("test"),
                 RoleId = 2,
-                GroupId = 1
+                //GroupId = 1
             };
 
             var insertGroupUser = new GroupUser()
             {
-                GroupId = (uint)cboxGroup.SelectedValue,
+                GroupId = 1,//(uint)cboxGroup.SelectedValue,
                 UserId = (uint)insertUser.UserId
             };
 

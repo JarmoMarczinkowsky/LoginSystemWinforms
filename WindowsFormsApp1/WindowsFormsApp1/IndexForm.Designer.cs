@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GroupUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,19 +49,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.cboxGroup = new System.Windows.Forms.ComboBox();
             this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.cboxRole = new System.Windows.Forms.ComboBox();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cboxGroupFix = new System.Windows.Forms.ComboBox();
             this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.txbGroupUserId = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -70,8 +72,8 @@
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.GroupUsers,
             this.nameDataGridViewTextBoxColumn,
-            this.Group,
             this.emailDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
             this.dgvUsers.DataSource = this.userBindingSource;
@@ -91,6 +93,14 @@
             this.Id.Name = "Id";
             this.Id.Width = 50;
             // 
+            // GroupUsers
+            // 
+            this.GroupUsers.DataPropertyName = "GroupUsers";
+            this.GroupUsers.HeaderText = "Group";
+            this.GroupUsers.MinimumWidth = 6;
+            this.GroupUsers.Name = "GroupUsers";
+            this.GroupUsers.Width = 125;
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
@@ -98,14 +108,6 @@
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Group
-            // 
-            this.Group.DataPropertyName = "Group";
-            this.Group.HeaderText = "Group";
-            this.Group.MinimumWidth = 6;
-            this.Group.Name = "Group";
-            this.Group.Width = 125;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -130,7 +132,7 @@
             // lblSelectName
             // 
             this.lblSelectName.AutoSize = true;
-            this.lblSelectName.Location = new System.Drawing.Point(597, 371);
+            this.lblSelectName.Location = new System.Drawing.Point(534, 304);
             this.lblSelectName.Name = "lblSelectName";
             this.lblSelectName.Size = new System.Drawing.Size(44, 16);
             this.lblSelectName.TabIndex = 1;
@@ -201,7 +203,7 @@
             // 
             // txbRole
             // 
-            this.txbRole.Location = new System.Drawing.Point(374, 399);
+            this.txbRole.Location = new System.Drawing.Point(366, 337);
             this.txbRole.Name = "txbRole";
             this.txbRole.Size = new System.Drawing.Size(190, 22);
             this.txbRole.TabIndex = 9;
@@ -243,18 +245,6 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // cboxGroup
-            // 
-            this.cboxGroup.DataSource = this.groupBindingSource;
-            this.cboxGroup.DisplayMember = "Name";
-            this.cboxGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxGroup.FormattingEnabled = true;
-            this.cboxGroup.Location = new System.Drawing.Point(275, 308);
-            this.cboxGroup.Name = "cboxGroup";
-            this.cboxGroup.Size = new System.Drawing.Size(243, 24);
-            this.cboxGroup.TabIndex = 14;
-            this.cboxGroup.ValueMember = "GroupId";
-            // 
             // groupBindingSource
             // 
             this.groupBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Group);
@@ -284,40 +274,47 @@
             // 
             this.roleBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Role);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 17;
-            // 
-            // cboxGroupFix
-            // 
-            this.cboxGroupFix.DataSource = this.userBindingSource1;
-            this.cboxGroupFix.DisplayMember = "Group";
-            this.cboxGroupFix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboxGroupFix.FormattingEnabled = true;
-            this.cboxGroupFix.Location = new System.Drawing.Point(275, 338);
-            this.cboxGroupFix.Name = "cboxGroupFix";
-            this.cboxGroupFix.Size = new System.Drawing.Size(243, 24);
-            this.cboxGroupFix.TabIndex = 18;
-            this.cboxGroupFix.ValueMember = "GroupId";
-            // 
             // userBindingSource1
             // 
             this.userBindingSource1.DataSource = typeof(WindowsFormsApp1.Tables.User);
+            // 
+            // txbGroupUserId
+            // 
+            this.txbGroupUserId.Location = new System.Drawing.Point(275, 309);
+            this.txbGroupUserId.Name = "txbGroupUserId";
+            this.txbGroupUserId.Size = new System.Drawing.Size(243, 22);
+            this.txbGroupUserId.TabIndex = 17;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(24, 356);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(388, 356);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView2.TabIndex = 19;
             // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cboxGroupFix);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(800, 618);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txbGroupUserId);
             this.Controls.Add(this.cboxRole);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cboxGroup);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -339,6 +336,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,18 +360,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.ComboBox cboxGroup;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.BindingSource groupBindingSource;
         private System.Windows.Forms.ComboBox cboxRole;
         private System.Windows.Forms.BindingSource roleBindingSource;
+        private System.Windows.Forms.BindingSource userBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GroupUsers;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Group;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox cboxGroupFix;
-        private System.Windows.Forms.BindingSource userBindingSource1;
+        private System.Windows.Forms.TextBox txbGroupUserId;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
