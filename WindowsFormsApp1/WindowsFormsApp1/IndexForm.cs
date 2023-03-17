@@ -78,7 +78,7 @@ namespace WindowsFormsApp1
             //update getData
             getData.Name = txbChangeName.Text;
             getData.Email = txbEmail.Text;
-            getData.RoleId = Convert.ToInt32(txbRole.Text);
+            getData.RoleId = Convert.ToInt32(cboxRole.SelectedValue);
             //getData.GroupId = Convert.ToInt32(cboxGroup.SelectedValue);
 
             this.dbContext.SaveChanges();
