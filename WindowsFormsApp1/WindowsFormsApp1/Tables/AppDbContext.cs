@@ -13,7 +13,7 @@ namespace WindowsFormsApp1.Tables
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Group> Groups { get; set; }
-
+        public DbSet<GroupUser> GroupUsers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
