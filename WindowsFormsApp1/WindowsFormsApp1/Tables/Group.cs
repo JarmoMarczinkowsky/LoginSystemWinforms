@@ -8,9 +8,11 @@ namespace WindowsFormsApp1.Tables
 {
     public class Group
     {
-        public int GroupId { get; set; }
+        public uint GroupId { get; set; }
         public string Name { get; set; }
         public int Size { get; set; }
+
+        public ICollection<GroupUser> GroupUsers { get; set; } = new List<GroupUser>();
 
         public override string ToString()
         {

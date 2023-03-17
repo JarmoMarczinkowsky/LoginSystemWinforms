@@ -170,7 +170,7 @@
     <Compile Include="Tables\Group.cs" />
     <Compile Include="Tables\Role.cs" />
     <Compile Include="Tables\User.cs" />
-    <Compile Include="Tables\UserGroup.cs" />
+    <Compile Include="Tables\GroupUser.cs" />
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>

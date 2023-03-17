@@ -16,6 +16,7 @@ namespace WindowsFormsApp1.Tables
         public Group Group { get; set; } = null;
         public int RoleId { get; set; }
         public Role Role { get; set; } = null;
+        public ICollection<GroupUser> GroupUsers { get; set; } = new List<GroupUser>();
 
     }
 }

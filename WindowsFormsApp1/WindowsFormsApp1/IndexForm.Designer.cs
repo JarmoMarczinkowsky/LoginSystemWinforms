@@ -54,10 +54,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboxRole = new System.Windows.Forms.ComboBox();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboxGroupFix = new System.Windows.Forms.ComboBox();
+            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsers
@@ -280,11 +284,37 @@
             // 
             this.roleBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Role);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 17;
+            // 
+            // cboxGroupFix
+            // 
+            this.cboxGroupFix.DataSource = this.userBindingSource1;
+            this.cboxGroupFix.DisplayMember = "Group";
+            this.cboxGroupFix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxGroupFix.FormattingEnabled = true;
+            this.cboxGroupFix.Location = new System.Drawing.Point(275, 338);
+            this.cboxGroupFix.Name = "cboxGroupFix";
+            this.cboxGroupFix.Size = new System.Drawing.Size(243, 24);
+            this.cboxGroupFix.TabIndex = 18;
+            this.cboxGroupFix.ValueMember = "GroupId";
+            // 
+            // userBindingSource1
+            // 
+            this.userBindingSource1.DataSource = typeof(WindowsFormsApp1.Tables.User);
+            // 
             // IndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboxGroupFix);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cboxRole);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboxGroup);
@@ -308,6 +338,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,5 +371,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Group;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboxGroupFix;
+        private System.Windows.Forms.BindingSource userBindingSource1;
     }
 }

@@ -101,15 +101,16 @@ namespace WindowsFormsApp1
                 GroupId = 1
             };
 
-            var insertGroupUser = new UserGroup()
+            var insertGroupUser = new GroupUser()
             {
-                GroupId = (int)cboxGroup.SelectedValue,
-                UserId = (int)insertUser.UserId
+                GroupId = (uint)cboxGroup.SelectedValue,
+                UserId = (uint)insertUser.UserId
             };
+
+            insertUser.GroupUsers.Add(insertGroupUser);
             this.dbContext.Users.Add(insertUser);
 
             //add insertgroupuser to usergroup table
-            //this.dbContext.UserGroups.Add(insertGroupUser);
 
             this.dbContext.SaveChanges();
 

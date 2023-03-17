@@ -13,7 +13,6 @@ namespace WindowsFormsApp1.Tables
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Group> Groups { get; set; }
-        public DbSet<UserGroup> UserGroups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,6 +26,22 @@ namespace WindowsFormsApp1.Tables
         {
             base.OnModelCreating(modelBuilder);
             //seeder
+
+            //define pivot table between user and group
+            modelBuilder.Entity<GroupUser>()
+                .HasKey(gu => new { gu.UserId, gu.GroupId });
+
+            modelBuilder.Entity<GroupUser>()
+                .HasOne(gu => gu.User)
+                .WithMany(u => u.GroupUsers)
+                .HasForeignKey(gu => gu.UserId);
+
+            modelBuilder.Entity<GroupUser>()
+                .HasOne(gu => gu.Group)
+                .WithMany(g => g.GroupUsers)
+                .HasForeignKey(gu => gu.GroupId);
+
+                
 
             modelBuilder.Entity<Role>().HasData(
                 new Role { RoleId = 1, Name = "User" },
@@ -49,7 +64,7 @@ namespace WindowsFormsApp1.Tables
                 new Group { GroupId = 4, Name = "TT_LG_PROMI", Size = 20 });
 
             //create a modelbuilder for usergroup without a primary key
-            modelBuilder.Entity<UserGroup>().HasNoKey();
+            //modelBuilder.Entity<GroupUser>().HasNoKey();
         }
 
 
