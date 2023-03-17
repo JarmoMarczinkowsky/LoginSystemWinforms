@@ -53,7 +53,6 @@ namespace WindowsFormsApp1
         {
             //decrypt password from database
             var getPass = dbContext.Users.Where(u => txbUser.Text == u.Email).FirstOrDefault();
-            //var decryptGetPass = BCrypt.Net.BCrypt.Verify(txbPassword.Text, getPass.Password);
 
             var checkLogin = dbContext.Users.Where(u => txbUser.Text == u.Email && CheckPassword(txbPassword.Text, getPass.Password)).FirstOrDefault();
             
@@ -61,11 +60,9 @@ namespace WindowsFormsApp1
             {
                 lblError.Text = "Login gelukt";
 
-                //MyAccount = txbUser.Text;
                 Global.AccountName = txbUser.Text;
 
                 //go to IndexForm and close current form
-
                 this.Hide();
                 DashboardForm dashboardForm = new DashboardForm();
                 dashboardForm.ShowDialog();
