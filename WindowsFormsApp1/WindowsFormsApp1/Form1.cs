@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
             {
                 lblError.Text = "Login gelukt";
 
-                Global.AccountName = txbUser.Text;
+                Global.AccountName = getPass.Name;
 
                 //go to IndexForm and close current form
                 this.Hide();

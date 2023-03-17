@@ -37,11 +37,11 @@ namespace WindowsFormsApp1
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
             this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
 
-            this.userBindingSource1.DataSource = dbContext.Groups.Local.ToBindingList();
+            //this.userBindingSource1.DataSource = dbContext.Groups.Local.ToBindingList();
 
             this.groupUserBindingSource.DataSource = dbContext.Users.Where(g => g.GroupUsers.Any()).ToList();
 
-            lblAccountName.Text = Global.AccountName;
+            lblAccountName.Text = $"Welkom, {Global.AccountName}";
 
 
         }

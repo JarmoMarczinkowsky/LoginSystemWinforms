@@ -51,7 +51,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboxRole = new System.Windows.Forms.ComboBox();
             this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.txbGroupUserId = new System.Windows.Forms.TextBox();
             this.dgvGroups = new System.Windows.Forms.DataGridView();
             this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).BeginInit();
@@ -131,7 +129,7 @@
             // lblAccountName
             // 
             this.lblAccountName.AutoSize = true;
-            this.lblAccountName.Location = new System.Drawing.Point(645, 14);
+            this.lblAccountName.Location = new System.Drawing.Point(13, 33);
             this.lblAccountName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAccountName.Name = "lblAccountName";
             this.lblAccountName.Size = new System.Drawing.Size(70, 25);
@@ -278,10 +276,6 @@
             // 
             this.roleBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Role);
             // 
-            // userBindingSource1
-            // 
-            this.userBindingSource1.DataSource = typeof(WindowsFormsApp1.Tables.User);
-            // 
             // txbGroupUserId
             // 
             this.txbGroupUserId.Location = new System.Drawing.Point(412, 483);
@@ -418,7 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roleBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).EndInit();
@@ -447,7 +440,6 @@
         private System.Windows.Forms.BindingSource groupBindingSource;
         private System.Windows.Forms.ComboBox cboxRole;
         private System.Windows.Forms.BindingSource roleBindingSource;
-        private System.Windows.Forms.BindingSource userBindingSource1;
         private System.Windows.Forms.TextBox txbGroupUserId;
         private System.Windows.Forms.DataGridView dgvGroups;
         private System.Windows.Forms.DataGridView dgvGroupUser;
