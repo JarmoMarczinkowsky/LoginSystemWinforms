@@ -30,11 +30,13 @@ namespace WindowsFormsApp1
                 .Load();
 
             dbContext.Roles.Load();
-            
+            dbContext.Groups.Load();
 
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
             this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
+
+            this.userBindingSource1.DataSource = dbContext.Groups.Local.ToBindingList();
 
             lblAccountName.Text = Global.AccountName;
 
@@ -56,6 +58,7 @@ namespace WindowsFormsApp1
             }
 
             cboxGroup.SelectedValue = selectRow.GroupId;
+            cboxRole.SelectedValue = selectRow.RoleId;
 
             lblSelectName.Text = selectRow.Role.Name;
             txbChangeName.Text = selectRow.Name;
