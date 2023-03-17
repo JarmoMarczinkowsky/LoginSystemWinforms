@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            //int number = selectRow.GroupUsers;
+
 
             //cboxGroup.SelectedValue = number;
             cboxRole.SelectedValue = selectRow.RoleId;
