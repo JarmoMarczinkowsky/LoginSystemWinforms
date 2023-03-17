@@ -16,5 +16,10 @@ namespace WindowsFormsApp1.Tables
         public Role Role { get; set; } = null;
         public ICollection<GroupUser> GroupUsers { get; set; } = new List<GroupUser>();
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
     }
 }

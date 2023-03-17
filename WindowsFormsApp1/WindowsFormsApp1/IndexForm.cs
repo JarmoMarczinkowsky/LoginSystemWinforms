@@ -31,12 +31,15 @@ namespace WindowsFormsApp1
 
             dbContext.Roles.Load();
             dbContext.Groups.Load();
+            
 
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
             this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
 
             this.userBindingSource1.DataSource = dbContext.Groups.Local.ToBindingList();
+
+            this.groupUserBindingSource.DataSource = dbContext.Users.Where(g => g.GroupUsers.Any()).ToList();
 
             lblAccountName.Text = Global.AccountName;
 
@@ -125,6 +128,23 @@ namespace WindowsFormsApp1
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Global.FormDirect(this, new DashboardForm());
+        }
+
+        private void btnAddUserToGroup_Click(object sender, EventArgs e)
+        {
+            var getUser = (User)this.dgvUsers.CurrentRow?.DataBoundItem;
+            var getGroup = (Tables.Group)this.dgvGroups.CurrentRow?.DataBoundItem;
+
+            var insertGroupUser = new GroupUser()
+            {
+                GroupId = (uint)getGroup.GroupId,
+                UserId = (uint)getUser.UserId
+            };
+
+            getUser.GroupUsers.Add(insertGroupUser);
+
+            this.dbContext.SaveChanges();
+
         }
     }
 }

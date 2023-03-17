@@ -16,15 +16,6 @@ namespace WindowsFormsApp1
     {
         private AppDbContext dbContext;
 
-        //private string _accountName;
-        //public string MyAccount
-        //{
-        //    get { return _accountName; }
-        //    set { _accountName = value; }
-        //}
-
-        //public static string myAccountName = "";
-
         public Form1()
         {
             InitializeComponent();
@@ -37,7 +28,7 @@ namespace WindowsFormsApp1
         {
             this.dbContext = new AppDbContext();
 
-            //this.dbContext.Database.EnsureDeleted();
+            this.dbContext.Database.EnsureDeleted();
             this.dbContext.Database.EnsureCreated();
 
             var loadUsers = dbContext.Users;
@@ -51,6 +42,12 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(txbUser.Text == "" || txbPassword.Text == "")
+            {
+                lblError.Text = "Please enter your data in both of the fields";
+                return;
+            }
+            
             //decrypt password from database
             var getPass = dbContext.Users.Where(u => txbUser.Text == u.Email).FirstOrDefault();
 
