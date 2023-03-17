@@ -35,16 +35,10 @@ namespace WindowsFormsApp1
 
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
-            this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
-
-            //this.userBindingSource1.DataSource = dbContext.Groups.Local.ToBindingList();
-
-            //this.groupUserBindingSource.DataSource = dbContext.Users.Where(g => g.GroupUsers.Any()).ToList();
             this.groupUserBindingSource.DataSource = dbContext.GroupUsers.Local.ToBindingList();
+            this.roleBindingSource.DataSource = dbContext.Roles.Local.ToBindingList();
             
-
-            lblAccountName.Text = $"Welkom, {Global.AccountName}";
-
+            lblAccountName.Text = $"Welcome, {Global.AccountName}";
 
         }
 
@@ -79,7 +73,6 @@ namespace WindowsFormsApp1
             getData.Name = txbChangeName.Text;
             getData.Email = txbEmail.Text;
             getData.RoleId = Convert.ToInt32(cboxRole.SelectedValue);
-            //getData.GroupId = Convert.ToInt32(cboxGroup.SelectedValue);
 
             this.dbContext.SaveChanges();
             dgvUsers.Refresh();
