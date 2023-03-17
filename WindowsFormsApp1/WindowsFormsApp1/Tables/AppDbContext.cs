@@ -62,8 +62,12 @@ namespace WindowsFormsApp1.Tables
                 new Group { GroupId = 3, Name = "TT_LG_VHBO", Size = 20 },
                 new Group { GroupId = 4, Name = "TT_LG_PROMI", Size = 20 });
 
-            //create a modelbuilder for usergroup without a primary key
-            //modelBuilder.Entity<GroupUser>().HasNoKey();
+            modelBuilder.Entity<GroupUser>().HasData(
+                new GroupUser { GroupId = 1, UserId = 1 },
+                new GroupUser { GroupId = 1, UserId = 2 },
+                new GroupUser { GroupId = 2, UserId = 3 },
+                new GroupUser { GroupId = 2, UserId = 4 }
+                );
         }
 
 

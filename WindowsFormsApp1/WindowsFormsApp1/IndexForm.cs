@@ -60,13 +60,13 @@ namespace WindowsFormsApp1
                 return;
             }
 
-
-
-            //cboxGroup.SelectedValue = number;
             cboxRole.SelectedValue = selectRow.RoleId;
 
-            lblSelectName.Text = selectRow.Role.Name;
+            txbEmail.Text = selectRow.Email;
             txbChangeName.Text = selectRow.Name;
+            
+            this.dbContext.Entry(selectRow).Collection(ProductName => ProductName.GroupUsers).Load();
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

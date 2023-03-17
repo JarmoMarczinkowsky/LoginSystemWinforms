@@ -31,12 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GroupUsers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblSelectName = new System.Windows.Forms.Label();
             this.lblAccountName = new System.Windows.Forms.Label();
             this.txbChangeName = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -62,9 +60,7 @@
             this.groupUsersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvGroupUser = new System.Windows.Forms.DataGridView();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAddUserToGroup = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -83,7 +79,6 @@
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.GroupUsers,
             this.nameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.roleDataGridViewTextBoxColumn});
@@ -104,14 +99,6 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.Width = 50;
-            // 
-            // GroupUsers
-            // 
-            this.GroupUsers.DataPropertyName = "GroupUsers";
-            this.GroupUsers.HeaderText = "Group";
-            this.GroupUsers.MinimumWidth = 6;
-            this.GroupUsers.Name = "GroupUsers";
-            this.GroupUsers.Width = 125;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -140,16 +127,6 @@
             // userBindingSource
             // 
             this.userBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.User);
-            // 
-            // lblSelectName
-            // 
-            this.lblSelectName.AutoSize = true;
-            this.lblSelectName.Location = new System.Drawing.Point(801, 475);
-            this.lblSelectName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblSelectName.Name = "lblSelectName";
-            this.lblSelectName.Size = new System.Drawing.Size(70, 25);
-            this.lblSelectName.TabIndex = 1;
-            this.lblSelectName.Text = "label1";
             // 
             // lblAccountName
             // 
@@ -369,9 +346,7 @@
             this.dgvGroupUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroupUser.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userIdDataGridViewTextBoxColumn,
-            this.userDataGridViewTextBoxColumn,
-            this.groupIdDataGridViewTextBoxColumn1,
-            this.groupDataGridViewTextBoxColumn});
+            this.groupIdDataGridViewTextBoxColumn1});
             this.dgvGroupUser.DataSource = this.groupUserBindingSource;
             this.dgvGroupUser.Location = new System.Drawing.Point(674, 559);
             this.dgvGroupUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -387,15 +362,7 @@
             this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
             this.userIdDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
-            this.userIdDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // userDataGridViewTextBoxColumn
-            // 
-            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            this.userDataGridViewTextBoxColumn.HeaderText = "User";
-            this.userDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            this.userDataGridViewTextBoxColumn.Width = 200;
+            this.userIdDataGridViewTextBoxColumn.Width = 75;
             // 
             // groupIdDataGridViewTextBoxColumn1
             // 
@@ -403,15 +370,7 @@
             this.groupIdDataGridViewTextBoxColumn1.HeaderText = "GroupId";
             this.groupIdDataGridViewTextBoxColumn1.MinimumWidth = 10;
             this.groupIdDataGridViewTextBoxColumn1.Name = "groupIdDataGridViewTextBoxColumn1";
-            this.groupIdDataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // groupDataGridViewTextBoxColumn
-            // 
-            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
-            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
-            this.groupDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
-            this.groupDataGridViewTextBoxColumn.Width = 200;
+            this.groupIdDataGridViewTextBoxColumn1.Width = 75;
             // 
             // groupUserBindingSource
             // 
@@ -451,7 +410,6 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txbChangeName);
             this.Controls.Add(this.lblAccountName);
-            this.Controls.Add(this.lblSelectName);
             this.Controls.Add(this.dgvUsers);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "IndexForm";
@@ -473,7 +431,6 @@
 
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.BindingSource userBindingSource;
-        private System.Windows.Forms.Label lblSelectName;
         private System.Windows.Forms.Label lblAccountName;
         private System.Windows.Forms.TextBox txbChangeName;
         private System.Windows.Forms.Button btnUpdate;
@@ -491,11 +448,6 @@
         private System.Windows.Forms.ComboBox cboxRole;
         private System.Windows.Forms.BindingSource roleBindingSource;
         private System.Windows.Forms.BindingSource userBindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GroupUsers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox txbGroupUserId;
         private System.Windows.Forms.DataGridView dgvGroups;
         private System.Windows.Forms.DataGridView dgvGroupUser;
@@ -505,9 +457,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn groupUsersDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource groupUserBindingSource;
         private System.Windows.Forms.Button btnAddUserToGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
     }
 }
