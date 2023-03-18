@@ -98,19 +98,21 @@ namespace WindowsFormsApp1
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
+            var getRole = (Role)this.cboxRole.SelectedItem;
+            var getGroup = (Tables.Group)this.dgvGroups.CurrentRow?.DataBoundItem;
+
             //insert into database and refresh datagridview 
             var insertUser = new User()
             {
                 Name = txbChangeName.Text,
                 Email = txbEmail.Text,
-                Password = BCrypt.Net.BCrypt.HashPassword("test"),
-                RoleId = 2,
-                //GroupId = 1
+                Password = AppDbContext.EncryptPassword("test"),
+                RoleId = getRole.RoleId,
             };
 
             var insertGroupUser = new GroupUser()
             {
-                GroupId = 1,//(uint)cboxGroup.SelectedValue,
+                GroupId = (uint)getGroup.GroupId,//(uint)cboxGroup.SelectedValue,
                 UserId = (uint)insertUser.UserId
             };
 

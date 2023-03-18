@@ -80,7 +80,7 @@ namespace WindowsFormsApp1.Tables
         }
 
         //method that uses a sha 256 encryption to encrypt string
-        public string EncryptPassword(string password)
+        public static string EncryptPassword(string password)
         {
             using (var sha256 = System.Security.Cryptography.SHA256.Create())
             {
