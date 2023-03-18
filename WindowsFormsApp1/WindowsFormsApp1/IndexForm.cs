@@ -143,6 +143,7 @@ namespace WindowsFormsApp1
             getUser.GroupUsers.Add(insertGroupUser);
 
             this.dbContext.SaveChanges();
+            dgvGroupUser.Refresh();
 
         }
     }
