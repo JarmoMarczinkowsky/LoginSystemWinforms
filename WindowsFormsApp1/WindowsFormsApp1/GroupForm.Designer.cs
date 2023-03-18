@@ -33,11 +33,15 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.btnAddGroup = new System.Windows.Forms.Button();
+            this.txbGroup = new System.Windows.Forms.TextBox();
+            this.btnEditGroup = new System.Windows.Forms.Button();
+            this.btnRemoveGroup = new System.Windows.Forms.Button();
+            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).BeginInit();
@@ -64,7 +68,7 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.Location = new System.Drawing.Point(833, 14);
+            this.btnDashboard.Location = new System.Drawing.Point(839, 14);
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(172, 62);
@@ -75,7 +79,7 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1015, 14);
+            this.btnLogout.Location = new System.Drawing.Point(1019, 14);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(172, 62);
@@ -92,13 +96,58 @@
             this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userDataGridViewTextBoxColumn});
             this.dgvStudents.DataSource = this.groupUserBindingSource;
-            this.dgvStudents.Location = new System.Drawing.Point(13, 384);
+            this.dgvStudents.Location = new System.Drawing.Point(922, 98);
             this.dgvStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvStudents.Name = "dgvStudents";
             this.dgvStudents.RowHeadersWidth = 51;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(884, 267);
+            this.dgvStudents.Size = new System.Drawing.Size(271, 267);
             this.dgvStudents.TabIndex = 16;
+            // 
+            // btnAddGroup
+            // 
+            this.btnAddGroup.Location = new System.Drawing.Point(13, 373);
+            this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.Size = new System.Drawing.Size(175, 51);
+            this.btnAddGroup.TabIndex = 17;
+            this.btnAddGroup.Text = "Add";
+            this.btnAddGroup.UseVisualStyleBackColor = true;
+            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
+            // 
+            // txbGroup
+            // 
+            this.txbGroup.Location = new System.Drawing.Point(194, 383);
+            this.txbGroup.Name = "txbGroup";
+            this.txbGroup.Size = new System.Drawing.Size(245, 31);
+            this.txbGroup.TabIndex = 18;
+            // 
+            // btnEditGroup
+            // 
+            this.btnEditGroup.Location = new System.Drawing.Point(12, 430);
+            this.btnEditGroup.Name = "btnEditGroup";
+            this.btnEditGroup.Size = new System.Drawing.Size(175, 51);
+            this.btnEditGroup.TabIndex = 19;
+            this.btnEditGroup.Text = "Edit";
+            this.btnEditGroup.UseVisualStyleBackColor = true;
+            this.btnEditGroup.Click += new System.EventHandler(this.btnEditGroup_Click);
+            // 
+            // btnRemoveGroup
+            // 
+            this.btnRemoveGroup.Location = new System.Drawing.Point(12, 487);
+            this.btnRemoveGroup.Name = "btnRemoveGroup";
+            this.btnRemoveGroup.Size = new System.Drawing.Size(175, 51);
+            this.btnRemoveGroup.TabIndex = 20;
+            this.btnRemoveGroup.Text = "Remove";
+            this.btnRemoveGroup.UseVisualStyleBackColor = true;
+            this.btnRemoveGroup.Click += new System.EventHandler(this.btnRemoveGroup_Click);
+            // 
+            // userDataGridViewTextBoxColumn
+            // 
+            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
+            this.userDataGridViewTextBoxColumn.HeaderText = "User";
+            this.userDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
+            this.userDataGridViewTextBoxColumn.Width = 102;
             // 
             // groupUserBindingSource
             // 
@@ -124,19 +173,15 @@
             // 
             this.groupBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Group);
             // 
-            // userDataGridViewTextBoxColumn
-            // 
-            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
-            this.userDataGridViewTextBoxColumn.HeaderText = "User";
-            this.userDataGridViewTextBoxColumn.MinimumWidth = 10;
-            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
-            this.userDataGridViewTextBoxColumn.Width = 102;
-            // 
             // GroupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.ClientSize = new System.Drawing.Size(1204, 620);
+            this.Controls.Add(this.btnRemoveGroup);
+            this.Controls.Add(this.btnEditGroup);
+            this.Controls.Add(this.txbGroup);
+            this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.dgvStudents);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnLogout);
@@ -149,6 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,5 +209,9 @@
         private System.Windows.Forms.DataGridView dgvStudents;
         private System.Windows.Forms.BindingSource groupUserBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnAddGroup;
+        private System.Windows.Forms.TextBox txbGroup;
+        private System.Windows.Forms.Button btnEditGroup;
+        private System.Windows.Forms.Button btnRemoveGroup;
     }
 }

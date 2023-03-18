@@ -43,7 +43,41 @@ namespace WindowsFormsApp1
         {
             var getRow = (Group)this.dgvGroup.CurrentRow?.DataBoundItem;
 
+            if (getRow == null)
+            {
+                return;
+            }
             this.groupUserBindingSource.DataSource = this.dbContext.GroupUsers.Local.ToBindingList().Where(gu => gu.GroupId == getRow.GroupId);
+        }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            //insert textbox into database
+            var newGroup = new Group
+            {
+                Name = txbGroup.Text
+            };
+
+            this.dbContext.Groups.Add(newGroup);
+            this.dbContext.SaveChanges();
+            dgvGroup.Refresh();
+        }
+
+        private void btnEditGroup_Click(object sender, EventArgs e)
+        {
+            //edit group
+            var getRow = (Group)this.dgvGroup.CurrentRow?.DataBoundItem;
+            getRow.Name = txbGroup.Text;
+
+            this.dbContext.SaveChanges();
+            dgvGroup.Refresh();
+        }
+
+        private void btnRemoveGroup_Click(object sender, EventArgs e)
+        {
+            this.dbContext.Remove((Group)this.dgvGroup.CurrentRow?.DataBoundItem);
+            this.dbContext.SaveChanges();
+            dgvGroup.Refresh();
         }
     }
 }
