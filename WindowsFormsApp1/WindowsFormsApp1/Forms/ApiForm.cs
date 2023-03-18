@@ -35,5 +35,15 @@ namespace WindowsFormsApp1.Forms
             //pboxApi.Image = new Bitmap(myDeserializedClass.image);
 
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Global.Logout(this);
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Global.FormDirect(this, new DashboardForm());
+        }
     }
 }

@@ -30,15 +30,17 @@
         {
             this.pboxApi = new System.Windows.Forms.PictureBox();
             this.btnGetApi = new System.Windows.Forms.Button();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pboxApi)).BeginInit();
             this.SuspendLayout();
             // 
             // pboxApi
             // 
-            this.pboxApi.Location = new System.Drawing.Point(429, 91);
+            this.pboxApi.Location = new System.Drawing.Point(414, 124);
             this.pboxApi.Name = "pboxApi";
             this.pboxApi.Size = new System.Drawing.Size(413, 335);
-            this.pboxApi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pboxApi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxApi.TabIndex = 0;
             this.pboxApi.TabStop = false;
             // 
@@ -52,11 +54,35 @@
             this.btnGetApi.UseVisualStyleBackColor = true;
             this.btnGetApi.Click += new System.EventHandler(this.btnGetApi_Click);
             // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Location = new System.Drawing.Point(578, 14);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(172, 62);
+            this.btnDashboard.TabIndex = 17;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(758, 14);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(172, 62);
+            this.btnLogout.TabIndex = 16;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 513);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnGetApi);
             this.Controls.Add(this.pboxApi);
             this.Name = "ApiForm";
@@ -70,5 +96,7 @@
 
         private System.Windows.Forms.PictureBox pboxApi;
         private System.Windows.Forms.Button btnGetApi;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnLogout;
     }
 }
