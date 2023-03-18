@@ -64,6 +64,7 @@ namespace WindowsFormsApp1.Tables
 
             modelBuilder.Entity<GroupUser>().HasData(
                 new GroupUser { GroupId = 1, UserId = 1 },
+                new GroupUser { GroupId = 2, UserId = 1 },
                 new GroupUser { GroupId = 1, UserId = 2 },
                 new GroupUser { GroupId = 2, UserId = 3 },
                 new GroupUser { GroupId = 2, UserId = 4 }

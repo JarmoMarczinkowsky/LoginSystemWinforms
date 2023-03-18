@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
             dbContext.Roles.Load();
             dbContext.Groups.Load();
             
+            
 
             this.userBindingSource.DataSource = dbContext.Users.Local.ToBindingList();
             this.groupBindingSource.DataSource = dbContext.Groups.Local.ToBindingList();
@@ -60,8 +61,11 @@ namespace WindowsFormsApp1
 
             txbEmail.Text = selectRow.Email;
             txbChangeName.Text = selectRow.Name;
-            
-            this.dbContext.Entry(selectRow).Collection(ProductName => ProductName.GroupUsers).Load();
+
+            //group has to be the same as the groupid in the database
+            var getGroupUser = dbContext.GroupUsers.Where(gu => gu.UserId == selectRow.UserId).ToList();
+
+            this.groupUserBindingSource.DataSource = getGroupUser;
 
         }
 
