@@ -30,41 +30,117 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvGroup = new System.Windows.Forms.DataGridView();
-            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.dgvStudents = new System.Windows.Forms.DataGridView();
+            this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGroup
             // 
             this.dgvGroup.AutoGenerateColumns = false;
+            this.dgvGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.groupIdDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.sizeDataGridViewTextBoxColumn});
             this.dgvGroup.DataSource = this.groupBindingSource;
-            this.dgvGroup.Location = new System.Drawing.Point(84, 57);
+            this.dgvGroup.Location = new System.Drawing.Point(13, 98);
+            this.dgvGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvGroup.Name = "dgvGroup";
             this.dgvGroup.RowHeadersWidth = 51;
             this.dgvGroup.RowTemplate.Height = 24;
-            this.dgvGroup.Size = new System.Drawing.Size(589, 171);
+            this.dgvGroup.Size = new System.Drawing.Size(884, 267);
             this.dgvGroup.TabIndex = 0;
+            this.dgvGroup.SelectionChanged += new System.EventHandler(this.dgvGroup_SelectionChanged);
             // 
-            // groupBindingSource
+            // btnDashboard
             // 
-            this.groupBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Group);
+            this.btnDashboard.Location = new System.Drawing.Point(833, 14);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(172, 62);
+            this.btnDashboard.TabIndex = 15;
+            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(1015, 14);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(172, 62);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
+            // dgvStudents
+            // 
+            this.dgvStudents.AutoGenerateColumns = false;
+            this.dgvStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userIdDataGridViewTextBoxColumn,
+            this.userDataGridViewTextBoxColumn,
+            this.groupIdDataGridViewTextBoxColumn,
+            this.groupDataGridViewTextBoxColumn});
+            this.dgvStudents.DataSource = this.groupUserBindingSource;
+            this.dgvStudents.Location = new System.Drawing.Point(13, 384);
+            this.dgvStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvStudents.Name = "dgvStudents";
+            this.dgvStudents.RowHeadersWidth = 51;
+            this.dgvStudents.RowTemplate.Height = 24;
+            this.dgvStudents.Size = new System.Drawing.Size(884, 267);
+            this.dgvStudents.TabIndex = 16;
+            // 
+            // userIdDataGridViewTextBoxColumn
+            // 
+            this.userIdDataGridViewTextBoxColumn.DataPropertyName = "UserId";
+            this.userIdDataGridViewTextBoxColumn.HeaderText = "UserId";
+            this.userIdDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.userIdDataGridViewTextBoxColumn.Name = "userIdDataGridViewTextBoxColumn";
+            this.userIdDataGridViewTextBoxColumn.Width = 119;
+            // 
+            // userDataGridViewTextBoxColumn
+            // 
+            this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
+            this.userDataGridViewTextBoxColumn.HeaderText = "User";
+            this.userDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
+            this.userDataGridViewTextBoxColumn.Width = 102;
             // 
             // groupIdDataGridViewTextBoxColumn
             // 
             this.groupIdDataGridViewTextBoxColumn.DataPropertyName = "GroupId";
             this.groupIdDataGridViewTextBoxColumn.HeaderText = "GroupId";
-            this.groupIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.groupIdDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.groupIdDataGridViewTextBoxColumn.Name = "groupIdDataGridViewTextBoxColumn";
-            this.groupIdDataGridViewTextBoxColumn.Width = 125;
+            this.groupIdDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // groupDataGridViewTextBoxColumn
+            // 
+            this.groupDataGridViewTextBoxColumn.DataPropertyName = "Group";
+            this.groupDataGridViewTextBoxColumn.HeaderText = "Group";
+            this.groupDataGridViewTextBoxColumn.MinimumWidth = 10;
+            this.groupDataGridViewTextBoxColumn.Name = "groupDataGridViewTextBoxColumn";
+            this.groupDataGridViewTextBoxColumn.Width = 116;
+            // 
+            // groupUserBindingSource
+            // 
+            this.groupUserBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.GroupUser);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -72,7 +148,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
+            this.nameDataGridViewTextBoxColumn.Width = 113;
             // 
             // sizeDataGridViewTextBoxColumn
             // 
@@ -80,17 +156,27 @@
             this.sizeDataGridViewTextBoxColumn.HeaderText = "Size";
             this.sizeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sizeDataGridViewTextBoxColumn.Name = "sizeDataGridViewTextBoxColumn";
-            this.sizeDataGridViewTextBoxColumn.Width = 125;
+            this.sizeDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // groupBindingSource
+            // 
+            this.groupBindingSource.DataSource = typeof(WindowsFormsApp1.Tables.Group);
             // 
             // GroupForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 703);
+            this.Controls.Add(this.dgvStudents);
+            this.Controls.Add(this.btnDashboard);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.dgvGroup);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "GroupForm";
             this.Text = "GroupForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupUserBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -99,9 +185,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvGroup;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource groupBindingSource;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource groupBindingSource;
+        private System.Windows.Forms.DataGridView dgvStudents;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource groupUserBindingSource;
     }
 }
