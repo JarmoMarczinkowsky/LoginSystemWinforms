@@ -39,5 +39,10 @@ namespace WindowsFormsApp1
         {
             Global.Logout(this);
         }
+
+        private void API_Click(object sender, EventArgs e)
+        {
+            Global.FormDirect(this, new Forms.ApiForm());
+        }
     }
 }
