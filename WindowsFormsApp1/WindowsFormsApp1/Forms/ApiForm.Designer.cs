@@ -28,30 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pboxApi = new System.Windows.Forms.PictureBox();
             this.btnGetApi = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.pboxApi = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pboxApi)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pboxApi
-            // 
-            this.pboxApi.Location = new System.Drawing.Point(414, 124);
-            this.pboxApi.Name = "pboxApi";
-            this.pboxApi.Size = new System.Drawing.Size(413, 335);
-            this.pboxApi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pboxApi.TabIndex = 0;
-            this.pboxApi.TabStop = false;
-            this.pboxApi.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.pboxApi_LoadProgressChanged);
             // 
             // btnGetApi
             // 
             this.btnGetApi.Location = new System.Drawing.Point(90, 241);
             this.btnGetApi.Name = "btnGetApi";
             this.btnGetApi.Size = new System.Drawing.Size(210, 71);
-            this.btnGetApi.TabIndex = 1;
+            this.btnGetApi.TabIndex = 0;
             this.btnGetApi.Text = "Get image of fox";
             this.btnGetApi.UseVisualStyleBackColor = true;
             this.btnGetApi.Click += new System.EventHandler(this.btnGetApi_Click);
@@ -62,7 +52,7 @@
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(172, 62);
-            this.btnDashboard.TabIndex = 17;
+            this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -73,7 +63,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(172, 62);
-            this.btnLogout.TabIndex = 16;
+            this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -86,6 +76,16 @@
             this.lblStatus.Size = new System.Drawing.Size(91, 25);
             this.lblStatus.TabIndex = 18;
             this.lblStatus.Text = "Status...";
+            // 
+            // pboxApi
+            // 
+            this.pboxApi.Location = new System.Drawing.Point(414, 124);
+            this.pboxApi.Name = "pboxApi";
+            this.pboxApi.Size = new System.Drawing.Size(413, 335);
+            this.pboxApi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxApi.TabIndex = 0;
+            this.pboxApi.TabStop = false;
+            this.pboxApi.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.pboxApi_LoadProgressChanged);
             // 
             // ApiForm
             // 

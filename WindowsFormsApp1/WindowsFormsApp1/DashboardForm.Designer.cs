@@ -51,7 +51,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(172, 62);
-            this.btnLogout.TabIndex = 1;
+            this.btnLogout.TabIndex = 3;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -62,17 +62,17 @@
             this.btnGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGroup.Name = "btnGroup";
             this.btnGroup.Size = new System.Drawing.Size(208, 73);
-            this.btnGroup.TabIndex = 2;
+            this.btnGroup.TabIndex = 1;
             this.btnGroup.Text = "Groups";
             this.btnGroup.UseVisualStyleBackColor = true;
             this.btnGroup.Click += new System.EventHandler(this.btnGroup_Click);
             // 
             // API
             // 
-            this.API.Location = new System.Drawing.Point(463, 19);
+            this.API.Location = new System.Drawing.Point(451, 19);
             this.API.Name = "API";
             this.API.Size = new System.Drawing.Size(208, 73);
-            this.API.TabIndex = 3;
+            this.API.TabIndex = 2;
             this.API.Text = "API";
             this.API.UseVisualStyleBackColor = true;
             this.API.Click += new System.EventHandler(this.API_Click);

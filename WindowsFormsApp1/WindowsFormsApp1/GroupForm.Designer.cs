@@ -60,10 +60,10 @@
             this.dgvGroup.Location = new System.Drawing.Point(13, 98);
             this.dgvGroup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvGroup.Name = "dgvGroup";
-            this.dgvGroup.RowHeadersWidth = 51;
+            this.dgvGroup.RowHeadersWidth = 25;
             this.dgvGroup.RowTemplate.Height = 24;
-            this.dgvGroup.Size = new System.Drawing.Size(884, 267);
-            this.dgvGroup.TabIndex = 0;
+            this.dgvGroup.Size = new System.Drawing.Size(673, 267);
+            this.dgvGroup.TabIndex = 6;
             this.dgvGroup.SelectionChanged += new System.EventHandler(this.dgvGroup_SelectionChanged);
             // 
             // btnDashboard
@@ -72,7 +72,7 @@
             this.btnDashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(172, 62);
-            this.btnDashboard.TabIndex = 15;
+            this.btnDashboard.TabIndex = 4;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -83,7 +83,7 @@
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(172, 62);
-            this.btnLogout.TabIndex = 14;
+            this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -96,20 +96,20 @@
             this.dgvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.userDataGridViewTextBoxColumn});
             this.dgvStudents.DataSource = this.groupUserBindingSource;
-            this.dgvStudents.Location = new System.Drawing.Point(922, 98);
+            this.dgvStudents.Location = new System.Drawing.Point(839, 98);
             this.dgvStudents.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvStudents.Name = "dgvStudents";
-            this.dgvStudents.RowHeadersWidth = 51;
+            this.dgvStudents.RowHeadersWidth = 20;
             this.dgvStudents.RowTemplate.Height = 24;
-            this.dgvStudents.Size = new System.Drawing.Size(271, 267);
-            this.dgvStudents.TabIndex = 16;
+            this.dgvStudents.Size = new System.Drawing.Size(352, 508);
+            this.dgvStudents.TabIndex = 7;
             // 
             // btnAddGroup
             // 
             this.btnAddGroup.Location = new System.Drawing.Point(13, 373);
             this.btnAddGroup.Name = "btnAddGroup";
             this.btnAddGroup.Size = new System.Drawing.Size(175, 51);
-            this.btnAddGroup.TabIndex = 17;
+            this.btnAddGroup.TabIndex = 1;
             this.btnAddGroup.Text = "Add";
             this.btnAddGroup.UseVisualStyleBackColor = true;
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
@@ -119,14 +119,14 @@
             this.txbGroup.Location = new System.Drawing.Point(194, 383);
             this.txbGroup.Name = "txbGroup";
             this.txbGroup.Size = new System.Drawing.Size(245, 31);
-            this.txbGroup.TabIndex = 18;
+            this.txbGroup.TabIndex = 0;
             // 
             // btnEditGroup
             // 
             this.btnEditGroup.Location = new System.Drawing.Point(12, 430);
             this.btnEditGroup.Name = "btnEditGroup";
             this.btnEditGroup.Size = new System.Drawing.Size(175, 51);
-            this.btnEditGroup.TabIndex = 19;
+            this.btnEditGroup.TabIndex = 2;
             this.btnEditGroup.Text = "Edit";
             this.btnEditGroup.UseVisualStyleBackColor = true;
             this.btnEditGroup.Click += new System.EventHandler(this.btnEditGroup_Click);
@@ -136,7 +136,7 @@
             this.btnRemoveGroup.Location = new System.Drawing.Point(12, 487);
             this.btnRemoveGroup.Name = "btnRemoveGroup";
             this.btnRemoveGroup.Size = new System.Drawing.Size(175, 51);
-            this.btnRemoveGroup.TabIndex = 20;
+            this.btnRemoveGroup.TabIndex = 3;
             this.btnRemoveGroup.Text = "Remove";
             this.btnRemoveGroup.UseVisualStyleBackColor = true;
             this.btnRemoveGroup.Click += new System.EventHandler(this.btnRemoveGroup_Click);

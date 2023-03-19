@@ -29,21 +29,12 @@ namespace WindowsFormsApp1.Forms
             pboxApi.Image = Images.ProcesCatCrop;
             lblStatus.Text = "loading...";
 
-            //show image resource in picturebox
-
-
-
             //get api from url
             string url = "https://randomfox.ca/floof/";
             var json = new WebClient().DownloadString(url);
             Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(json);
 
             pboxApi.ImageLocation = myDeserializedClass.image;
-           
-            //pbxApi.Image = new Bitmap(myDeserializedClass.image);
-
-
-            //pboxApi.Image = new Bitmap(myDeserializedClass.image);
 
         }
 
