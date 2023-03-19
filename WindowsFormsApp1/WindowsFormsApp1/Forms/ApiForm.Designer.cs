@@ -32,6 +32,7 @@
             this.btnGetApi = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pboxApi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.pboxApi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pboxApi.TabIndex = 0;
             this.pboxApi.TabStop = false;
+            this.pboxApi.LoadProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.pboxApi_LoadProgressChanged);
             // 
             // btnGetApi
             // 
@@ -76,11 +78,21 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(409, 462);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(91, 25);
+            this.lblStatus.TabIndex = 18;
+            this.lblStatus.Text = "Status...";
+            // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 513);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnGetApi);
@@ -89,6 +101,7 @@
             this.Text = "ApiForm";
             ((System.ComponentModel.ISupportInitialize)(this.pboxApi)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,5 +111,6 @@
         private System.Windows.Forms.Button btnGetApi;
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Classes;
+using WindowsFormsApp1.Img;
+using WindowsFormsApp1.Properties;
 
 namespace WindowsFormsApp1.Forms
 {
@@ -18,17 +20,26 @@ namespace WindowsFormsApp1.Forms
         public ApiForm()
         {
             InitializeComponent();
+
+            lblStatus.Text = "";
         }
 
         private void btnGetApi_Click(object sender, EventArgs e)
         {
+            pboxApi.Image = Images.ProcesCatCrop;
+            lblStatus.Text = "loading...";
+
+            //show image resource in picturebox
+
+
+
             //get api from url
             string url = "https://randomfox.ca/floof/";
             var json = new WebClient().DownloadString(url);
             Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(json);
 
-            //show image from api in picturebox
             pboxApi.ImageLocation = myDeserializedClass.image;
+           
             //pbxApi.Image = new Bitmap(myDeserializedClass.image);
 
 
@@ -44,6 +55,11 @@ namespace WindowsFormsApp1.Forms
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             Global.FormDirect(this, new DashboardForm());
+        }
+
+        private void pboxApi_LoadProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            lblStatus.Text = "";
         }
     }
 }
